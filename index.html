@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OranaCX – Welcome‑First AI Customer Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0f5c8b; /* deep teal‑blue */
+      --primary‑light: #18a0c9; /* aqua highlight */
+      --bg‑light: #f8f9fa;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #1f2937;
+      scroll-behavior: smooth;
+      background: var(--bg‑light);
+    }
+    /* ------------- NAV ------------- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      background: #ffffffcc;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 1000;
+    }
+    .navbar a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* ------------- HERO ------------- */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 2rem;
+      background: linear-gradient(135deg, #e0f2ff 0%, #f7fbff 50%, #ffffff 100%);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0 0 1rem;
+      color: var(--primary);
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin: 0 0 2rem;
+      max-width: 680px;
+    }
+    .btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: var(--primary‑light);
+    }
+
+    /* ------------- SECTIONS ------------- */
+    section {
+      padding: 100px 1.5rem;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    section h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    section h2::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 48px;
+      height: 4px;
+      background: var(--primary‑light);
+      border-radius: 2px;
+    }
+
+    /* ------------- DEMO CARDS ------------- */
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .demo-card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 6px 12px #0000000d;
+    }
+    .demo-card button {
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 1.5rem;
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#about">About</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#demos">Demos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero">
+    <h1>OranaCX – Welcome‑First AI Support</h1>
+    <p>We blend cutting‑edge conversational AI with genuine human empathy to deliver seamless, 24/7 customer experiences.</p>
+    <button class="btn" onclick="document.getElementById('demos').scrollIntoView({behavior:'smooth'})">See Live Demos</button>
+  </header>
+
+  <section id="about">
+    <h2>About OranaCX</h2>
+    <p>Orana means <strong>“welcome.”</strong> At OranaCX, that spirit guides everything we build. We believe customer service should feel like an open door—warm, helpful, and effortless. Powered by advanced large‑language models and ethical design, our solutions turn every conversation into a meaningful connection.</p>
+  </section>
+
+  <section id="solutions">
+    <h2>Our Solutions</h2>
+    <ul>
+      <li><strong>AI Chatbots &amp; Voicebots:</strong> Natural, brand‑tuned conversations across web and mobile.</li>
+      <li><strong>Omnichannel Orchestration:</strong> Seamless handoff between bot and human agents.</li>
+      <li><strong>Analytics &amp; Insights:</strong> Real‑time dashboards for CSAT, sentiment, and ROI.</li>
+      <li><strong>Rapid Prototyping:</strong> Launch in weeks, not months, with our Botpress experts.</li>
+    </ul>
+  </section>
+
+  <section id="demos">
+    <h2>Live Demos</h2>
+    <div class="demo-grid">
+      <div class="demo-card">
+        <h3>Retail Support Bot</h3>
+        <p>Ask about orders, returns, and product FAQs.</p>
+        <button class="btn" onclick="window.botpressWebChat.sendEvent({type:'show'})">Chat Now</button>
+      </div>
+      <div class="demo-card">
+        <h3>Utilities Billing Bot</h3>
+        <p>See how AI handles billing queries with empathy.</p>
+        <button class="btn" onclick="window.botpressWebChat2.sendEvent({type:'show'})">Chat Now</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Ready to elevate your customer experience? <a href="mailto:hello@oranacx.com">hello@oranacx.com</a></p>
+  </section>
+
+  <footer>
+    © <span id="year"></span> OranaCX. All rights reserved.
+  </footer>
+
+  <!-- Botpress WebChat Scripts -->
+  <script src="https://cdn.botpress.cloud/webchat/v1/inject.js" defer></script>
+  <script>
+    // Demo 1 – Retail Support Bot
+    window.botpressWebChat = {
+      botId: "YOUR_BOTPRESS_BOTID_1",
+      host: "https://cdn.botpress.cloud/webchat/v1",
+      messagingUrl: "https://messaging.botpress.cloud",
+      lazy: true,
+      botName: "RetailBot",
+      avatarUrl: "https://avatars.githubusercontent.com/u/127543066?s=200&v=4",
+      showPoweredBy: false,
+      stylesheet: "",
+      layoutWidth: 400,
+      enableReset: false,
+      colorScheme: "light",
+      closeOnEscape: true,
+      showCloseButton: true,
+      greeting: "Hi there! Need help with your order?"
+    };
+    window.botpressWebChat.init();
+
+    // Demo 2 – Utilities Billing Bot (separate instance)
+    const script2 = document.createElement('script');
+    script2.src = "https://cdn.botpress.cloud/webchat/v1/inject.js";
+    script2.async = true;
+    script2.onload = () => {
+      window.botpressWebChat2 = {
+        botId: "YOUR_BOTPRESS_BOTID_2",
+        host: "https://cdn.botpress.cloud/webchat/v1",
+        messagingUrl: "https://messaging.botpress.cloud",
+        lazy: true,
+        botName: "BillingBot",
+        avatarUrl: "https://avatars.githubusercontent.com/u/127543066?s=200&v=4",
+        showPoweredBy: false,
+        layoutWidth: 400,
+        greeting: "Hello! I can help with billing and payments."
+      };
+      window.botpressWebChat2.init();
+    };
+    document.body.appendChild(script2);
+
+    // Dynamic year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
